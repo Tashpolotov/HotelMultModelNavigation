@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/navigation_feature_first"
+    android:id="@+id/navigation_top_level">
+
+    <include app:graph="@navigation/navigation_feature_first" />
+    <include app:graph="@navigation/navigation_feature_second" />
+    <include app:graph="@navigation/navigation_nav_graph_reservation" />
+
+    <action android:id="@+id/actionFeatureFirst"
+        app:destination="@+id/navigation_feature_first"
+        />
+
+    <action android:id="@+id/actionFeatureSecond"
+        app:destination="@+id/navigation_feature_second"/>
+
+    <action android:id="@+id/actionFeaturesThird"
+        app:destination="@+id/navigation_nav_graph_reservation"/>
+
+</navigation>

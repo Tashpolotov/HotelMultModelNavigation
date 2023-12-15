@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_nav_graph_reservation"
+    app:startDestination="@id/reservationFragment">
+
+    <fragment
+        android:id="@+id/reservationFragment"
+        android:name="com.example.reservation_presenter.ReservationFragment"
+        android:label="fragment_reservation"
+        tools:layout="@layout/fragment_reservation" >
+        <deepLink app:uri="example.reservation://reservation"/>
+
+        <action android:id="@id/actions_reservationFragment2_to_actions_payFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/payFragment2"
+        android:name="com.example.reservation_presenter.PayFragment"
+        android:label="fragment_pay"
+        tools:layout="@layout/fragment_pay" >
+        <deepLink app:uri="example.pay://pay"/>
+
+    </fragment>
+</navigation>

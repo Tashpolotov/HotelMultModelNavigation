@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="acrions_reservationFragment2_to_actions_payFragment" type="id" />
+    <item name="actions_reservationFragment2_to_actions_payFragment" type="id" />
+</resources>

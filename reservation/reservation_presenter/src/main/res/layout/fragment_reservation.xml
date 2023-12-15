@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".ReservationFragment">
+
+    <FrameLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/fl_custom_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/include_custom_app_bar"
+            layout="@layout/custom_app_bar" />
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:elevation="10dp"
+        android:visibility="gone"
+        android:id="@+id/progress_bar"
+        android:indeterminateTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_reservation"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/fl_btn"
+        app:layout_constraintTop_toBottomOf="@id/fl_custom_app_bar"
+        tools:listitem="@layout/item_reservation"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="0dp"/>
+
+    <FrameLayout
+        android:background="@drawable/radius_bg_bottom"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:id="@+id/fl_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:id="@+id/btn_pay"
+            android:fontFamily="@font/ff_sf_pro_display_medium"
+            android:textColor="@color/white"
+            android:background="@drawable/main_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

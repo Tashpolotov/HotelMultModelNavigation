@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/cl_slider_image"
+        android:layout_marginTop="8dp"
+        android:paddingTop="16dp"
+        android:background="@drawable/radius_bg_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="258dp">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/radius_bg_indicator"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            app:ci_drawable="@drawable/selected_indicator"
+            app:ci_drawable_unselected="@drawable/unselected_indicator"
+            app:ci_gravity="center"
+            app:ci_height="7dp"
+            app:ci_width="7dp"
+            app:layout_constraintBottom_toBottomOf="@id/viewPager2"
+            app:layout_constraintEnd_toEndOf="@id/viewPager2"
+            app:layout_constraintStart_toStartOf="@id/viewPager2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_bg_bottom"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_slider_image">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_marginTop="8dp"
+            style="@style/BaseTextView"
+            android:textSize="22sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_hotels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:spanCount="2" />
+
+        <TextView
+            android:id="@+id/tv_more_detail"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="10dp"
+            style="@style/BaseTextView"
+            android:backgroundTint="@color/blue_hex10"
+            android:background="@drawable/radius_bg_indicator"
+            android:text="@string/more_details_about_the_room"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:drawableEndCompat="@drawable/ic_next"
+            app:drawableTint="@color/blue" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/tv_minimal_price"
+                style="@style/BaseTextView"
+                android:fontFamily="@font/ff_sf_pro_display_bold"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tv_price_for_it"
+                android:layout_marginStart="8dp"
+                style="@style/TextViewRegularGray" />
+
+        </LinearLayout>
+
+        <Button
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:id="@+id/btn_choose_number"
+            android:fontFamily="@font/ff_sf_pro_display_medium"
+            android:textColor="@color/white"
+            android:text="@string/choose_number"
+            android:background="@drawable/main_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
